@@ -1,0 +1,33 @@
+{# templates/login/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}Ajout/Modification Attributions{% endblock %}
+{% block body %}
+
+              <div class="col-md-6">
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                  <div class="card mb-4">
+                    <h5 class="card-header">Attribution points par groupe</h5>
+                    <div class="card-body demo-vertical-spacing demo-only-element">
+                      
+                      <div>
+                        <label class="form-label" for="basic-default-password12">Groupe</label>
+                        {{ form_widget(form.groupe) }}
+                        <span class="danger">{{ form_errors(form.groupe) }}</span>
+                      </div>
+                      <div class="form-password-toggle">
+                        <label class="form-label" for="basic-default-password12">Points</label>
+                          {{ form_widget(form.points) }}
+                          <span class="danger">{{ form_errors(form.points) }}</span>
+                      </div>
+                      <div class="form-password-toggle">
+                        <label class="form-label" for="basic-default-password12">Activer le</label>
+                          {{ form_widget(form.activeAt) }}
+                          <span class="danger">{{ form_errors(form.activeAt) }}</span>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Valider</button>
+                      
+                    </div>
+                  </div>
+                  {{ form_end(form) }}
+                </div>
+{% endblock %}

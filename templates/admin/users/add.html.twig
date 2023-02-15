@@ -1,0 +1,39 @@
+{# templates/login/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}Ajout/Modification Utilisateur{% endblock %}
+{% block body %}
+
+              <div class="col-md-6">
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                  <div class="card mb-4">
+                    <h5 class="card-header">Ajout Utilisateur</h5>
+                    <div class="card-body demo-vertical-spacing demo-only-element">
+                      <div>
+                        <label class="form-label" for="basic-default-password12">Email</label>
+                        {{ form_widget(form.email) }}
+                        <span class="danger">{{ form_errors(form.email) }}</span>
+                      </div>
+                      <div>
+                        <label class="form-label" for="basic-default-password12">Nom</label>
+                        {{ form_widget(form.name) }}
+                        <span class="danger">{{ form_errors(form.name) }}</span>
+                      </div>
+
+                      <div class="form-password-toggle">
+                        <label class="form-label" for="basic-default-password12">Password</label>
+                          {{ form_widget(form.password) }}
+                          <span class="danger">{{ form_errors(form.password) }}</span>
+                      </div>
+                      <div class="form-password-toggle">
+                        <label class="form-label" for="basic-default-password12">Groupe</label>
+                          {{ form_widget(form.groupe) }}
+                          <span class="danger">{{ form_errors(form.groupe) }}</span>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Valider</button>
+                      
+                    </div>
+                  </div>
+                  {{ form_end(form) }}
+                </div>
+    
+{% endblock %}
